@@ -1,0 +1,137 @@
+服务启动... 0.11
+解压缩文件失败 zip: not a valid zip file
+服务启动... 0.11
+客户端非法下载补丁 127.0.0.1  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+服务启动... 0.11
+服务启动... 0.11
+服务启动... 0.11
+服务启动... 0.11
+索引CRC= 214870328
+索引CRC= 214870328
+服务启动... 0.11
+索引CRC= 214870328
+服务启动... 0.11
+请求下载日志 127.0.0.1 run.log
+索引CRC= 214870328
+内网补丁分发服务启动... 0.12
+客户端非法下载补丁 127.0.0.1  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+启动补丁拷贝服务...
+系统被访问... 127.0.0.1
+系统被访问... 127.0.0.1
+启动补丁拷贝服务...
+系统被访问... 127.0.0.1
+系统被访问... 127.0.0.1
+系统被访问... 127.0.0.1
+系统被访问... 127.0.0.1
+系统被访问... 127.0.0.1
+查询xml所在位置失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+启动补丁拷贝服务...
+系统被访问... 127.0.0.1
+系统被访问... 127.0.0.1
+查询xml所在位置失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+加载下载补丁列表错误 dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. select ifnull(URL,'') from Dict_PatchFile where ifnull(IsExist,0)=0 and  ifnull(Disabled,0)=0 and ifnull(DownTimes,0)<=3 limit 500
+索引CRC= 214870328
+内网补丁分发服务启动... 0.12
+索引CRC= 214870328
+内网补丁分发服务启动... 0.12
+2018-05-15 09:38:53 索引CRC= 214870328
+2018-05-15 09:38:53 内网补丁分发服务启动... 0.12
+2018-05-15 09:39:31 索引CRC= 214870328
+2018-05-15 09:41:13 索引CRC= 214870328
+2018-05-15 09:41:55 索引CRC= 214870328
+2018-05-15 09:41:55 内网补丁分发服务启动... 0.12
+2018-05-15 09:41:57 客户端非法下载补丁 192.168.6.97  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 09:41:59 客户端非法下载补丁 192.168.6.97  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 09:42:00 客户端非法下载补丁 192.168.6.97  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 09:42:01 客户端非法下载补丁 192.168.6.97  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 09:42:01 客户端非法下载补丁 192.168.6.97  Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 09:48:14 索引CRC= 214870328
+2018-05-15 09:48:48 索引CRC= 214870328
+2018-05-15 10:01:15 索引CRC= 214870328
+2018-05-15 10:01:15 内网补丁分发服务启动... 0.12
+2018-05-15 10:01:16 客户端非法下载补丁 192.168.6.97 ?1=2 Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 10:17:21 索引CRC= 214870328
+2018-05-15 10:17:43 索引CRC= 214870328
+2018-05-15 10:17:43 内网补丁分发服务启动... 0.12
+2018-05-15 10:19:38 索引CRC= 214870328
+2018-05-15 10:19:38 内网补丁分发服务启动... 0.12
+2018-05-15 10:20:59 索引CRC= 214870328
+2018-05-15 10:20:59 内网补丁分发服务启动... 0.12
+2018-05-15 10:21:00 客户端非法下载补丁 192.168.6.97 a.txt Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 10:21:23 索引CRC= 214870328
+2018-05-15 10:21:23 内网补丁分发服务启动... 0.12
+2018-05-15 10:21:46 客户端非法下载补丁 192.168.6.97 ndp45-kb3122656-x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 10:21:52 客户端非法下载补丁 192.168.6.97 ndp45-kb3122656-x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 10:23:17 客户端非法下载补丁 192.168.6.97 ndp45-kb3122656-x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-15 15:33:15 补丁不存在 192.168.6.106 ndp45_kb3122656_x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe ywSMPAgent
+2018-05-15 15:36:49 补丁不存在 192.168.6.106 ndp45_kb3122656_x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe ywSMPAgent
+2018-05-15 15:39:19 索引CRC= 214870328
+2018-05-15 15:39:19 内网补丁分发服务启动... 0.13
+2018-05-15 15:40:17 补丁不存在 192.168.6.106 ndp45_kb3122656_x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe ywSMPAgent
+2018-05-15 15:41:53 补丁不存在 192.168.6.106 ndp45_kb3122656_x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe ywSMPAgent
+2018-05-15 15:43:35 索引CRC= 214870328
+2018-05-15 15:43:36 内网补丁分发服务启动... 0.13
+2018-05-15 15:44:09 补丁不存在 127.0.0.1 ndp45_kb3122656_x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36 D:\YW-WORK\patchdown/patchsndp45_kb3122656_x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe
+2018-05-15 15:44:09 非法访问 /favicon.ico
+2018-05-15 15:44:49 索引CRC= 214870328
+2018-05-15 15:44:49 内网补丁分发服务启动... 0.13
+2018-05-15 16:43:50 补丁不存在 192.168.6.106 ndp45-kb3122656-x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.65 Safari/537.36 D:\YW-WORK\patchdown/patchs/ndp45-kb3122656-x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe
+2018-05-15 16:43:50 非法访问 /favicon.ico
+2018-05-16 09:29:34 索引CRC= 214870328
+2018-05-16 09:29:34 内网补丁分发服务启动... 0.13
+2018-05-16 09:29:47 客户端非法下载补丁 127.0.0.1 ndp45_kb3122656_x64_7031e3ebb3f0cfc5836258c5cc995654012a3a91.exe Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+2018-05-16 09:32:47 索引CRC= 214870328
+2018-05-16 09:32:47 内网补丁分发服务启动... 0.13
+2018-05-16 09:33:36 索引CRC= 214870328
+2018-05-16 09:33:37 内网补丁分发服务启动... 0.13
+2018-05-16 09:34:27 索引CRC= 214870328
+2018-05-16 09:34:27 内网补丁分发服务启动... 0.13
+2018-05-16 09:44:17 索引CRC= 214870328
+2018-05-16 09:44:17 内网补丁分发服务启动... 0.13
+2018-05-16 09:44:23 非法访问 /
+2018-05-16 09:45:00 索引CRC= 214870328
+2018-05-16 09:45:00 内网补丁分发服务启动... 0.13
+2018-05-16 09:46:23 请求下载日志 127.0.0.1 run.log
+2018-05-16 09:48:59 索引CRC= 214870328
+2018-05-16 09:49:00 内网补丁分发服务启动... 0.13
+2018-05-16 09:52:08 启动补丁拷贝服务...
+2018-05-16 09:52:20 系统被访问... 127.0.0.1
+2018-05-16 09:52:41 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 09:52:49 系统被访问... 127.0.0.1
+2018-05-16 09:53:10 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 09:53:16 系统被访问... 127.0.0.1
+2018-05-16 09:53:37 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 09:53:48 启动补丁拷贝服务...
+2018-05-16 09:53:50 系统被访问... 127.0.0.1
+2018-05-16 09:54:11 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 09:54:31 系统被访问... 127.0.0.1
+2018-05-16 09:54:52 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 09:55:32 启动补丁拷贝服务...
+2018-05-16 09:55:33 系统被访问... 127.0.0.1
+2018-05-16 09:55:54 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 09:56:06 启动补丁拷贝服务...
+2018-05-16 09:56:12 系统被访问... 127.0.0.1
+2018-05-16 09:56:33 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 09:58:09 启动补丁拷贝服务...
+2018-05-16 10:01:08 启动补丁拷贝服务...
+2018-05-16 10:01:09 系统被访问... 127.0.0.1
+2018-05-16 10:01:30 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 10:02:15 系统被访问... ::1
+2018-05-16 10:02:36 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 10:03:02 启动补丁拷贝服务...
+2018-05-16 10:05:03 系统被访问... ::1
+2018-05-16 10:05:24 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 10:07:07 系统被访问... 127.0.0.1
+2018-05-16 10:07:28 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-16 10:08:13 启动补丁拷贝服务...
+2018-05-16 10:08:15 系统被访问... 127.0.0.1
+2018-05-16 10:08:36 获取上一次导出补丁时间失败. dial tcp 172.16.5.77:3306: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. Call EditExportTime('')
+2018-05-17 14:38:46 索引CRC= 214870328
+2018-05-17 14:38:46 内网补丁分发服务启动... 0.15
+2018-05-17 14:39:01 非法访问 /favicon.jpg
+2018-05-17 14:39:18 非法访问 /favicon.ico
+2018-05-17 14:40:50 非法访问 /favicon.png
+2018-05-17 14:43:02 索引CRC= 214870328
+2018-05-17 14:43:02 内网补丁分发服务启动... 0.15
+2018-05-17 14:53:35 索引CRC= 214870328
+2018-05-17 14:53:35 内网补丁分发服务启动... 0.15
