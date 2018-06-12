@@ -22,6 +22,8 @@ type STStatMgr struct {
 var GSTStatMgr = &STStatMgr{}
 
 func (this *STStatMgr) Init() {
+	GLogCollect.ToRunLog(fmt.Sprintln(`初始化STStatMgr...`))
+	defer GLogCollect.ToRunLog(fmt.Sprintln(`初始化STStatMgr完毕...`))
 	this.LoadXMLZipDate()
 	go this.Routine_work()
 }
@@ -61,6 +63,7 @@ func (this *STStatMgr) LoadXMLDate() {
 
 //获取索引压缩包的更新时间
 func (this *STStatMgr) LoadXMLZipDate() {
+
 	this.MuxStat.Lock()
 	defer this.MuxStat.Unlock()
 

@@ -26,7 +26,7 @@
 			width: 600px;
 			margin-left: 10px;
 			float: left;
-			background-color: #fff;
+			background-color: #ffffff54;
 			font-size: 180px;
 		}
 		.baselogo{
@@ -92,7 +92,7 @@
 	<div class="jd"><b>远</b></div><div class="jd1"><b>望</b></div>
 	<div style="display: inline-block;" class="zcw11">
 		<div class="left-list">
-			<div class="baselogo"><b>服务器运行状态</b></div>
+			<div class="baselogo"><b>运行状态</b></div>
 			<div class="baseline"></div>
 			<div>程序版本:<span>{{.Version}}</span></div>
 			<div>服务启动时间:<span>{{.StartTime}}</span></div></br>
@@ -106,9 +106,10 @@
 			<div>索引更新日期：<span>{{.PatchTime}}</span></div>
 			<div>索引下载次数：<span>{{.PatchDowns}}</span></div>
 			<!-- <div>最后导入日期：<span>{{.LastImportTime}}</span></div></br> -->
-			</br><div class="baselogo"><b>日志下载</b></div>
+			</br><div class="baselogo"><b>文件下载</b></div>
 			<div class="baseline"></div>
 			<a href="/logdown?log=run.log" target="_black" download="runlog.zip"><button class="btdownlog">运行日志</button></a>
+			<a href="/patchxml" target="_black" download="patchxml.zip"><button class="btdownlog">补丁索引</button></a>
 			<a href="e:\\3.zip" target="_black" download><button class="btdownlog" style="margin-left: 20px; display: none;">下载其他日志</button></a>
 			<!-- </br>
 			<div class="baselogo budingupdate">补丁升级</div>

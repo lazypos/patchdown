@@ -25,10 +25,7 @@ var StartType = flag.String("type", "", "")
 func GetInfo() {
 	//信息获取器
 	log.Println("启动补丁信息获取...")
-	if err := patchdown.Main_getinfo(); err != nil {
-		patchdown.GLogCollect.ToRunLog(fmt.Sprintln("获取补丁信息失败", err))
-		os.Exit(0)
-	}
+	patchdown.Main_getinfo()
 }
 
 func DownLoad() {

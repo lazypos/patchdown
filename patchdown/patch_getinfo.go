@@ -15,8 +15,8 @@ const (
 	SQL_GETALLKID         = `select KBID from Dict_PatchInfo`
 	SQL_INSERT_PATCHFILES = `insert into Dict_PatchFile (KBID,FileName,OS,Arch,Ver,Language,URL,Size,IsExist,Guid)
 							  values('%v','%v','%v','%v','%v','%v','%v','%v','0','%v')`
-	SQL_INSERT_PATCHINFO = `insert into Dict_PatchInfo (KBID, MsId,Title,Pubdate,Type,WarnLevel,Description,Webpage,CreateTime)
-							 values('%v','%v','%v','%v','%v','%v','%v','%v','%v')`
+	SQL_INSERT_PATCHINFO = `insert into Dict_PatchInfo (KBID, MsId,Title,Pubdate,Type,WarnLevel,Description,Webpage,CreateTime,Affects)
+							 values('%v','%v','%v','%v','%v','%v','%v','%v','%v','%v')`
 	SQL_TRUNCATE_REPALCEGUID = `truncate table Dict_PatchReplace`
 	SQL_SELECT_REPALCEGUID   = `select Guid, ReplaceGuid from Dict_PatchReplace`
 	SQL_UPDATE_REPALCEGUID   = `update Dict_PatchFile set Disabled=1 where Guid in (%v)`
@@ -300,6 +300,9 @@ func GetDonwloadURL(patch *STPatchInfo) (error, *STPatchInfo) {
 	req.Header.Add("Origin", "http://www.catalog.update.microsoft.com")
 	req.Header.Add("Upgrade-Insecure-Requests", "1")
 	resp, err := client.Do(req)
+	if err != nil {
+		return err, nil
+	}
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
@@ -338,10 +341,7 @@ func JoinText(tx1, tx2 string) string {
 		return tx1
 	}
 	if len(tx1) > 0 && len(tx2) > 0 {
-		if tx1 != tx2 {
-			return tx1 + "," + tx2
-		}
-		return tx1
+		return tx1 + "," + tx2
 	}
 	return ""
 }
@@ -1069,6 +1069,26 @@ func ParseUrl(arros, arrarch []string, url, urlsrc string, psize, guid string) *
 	return st
 }
 
+//去重OS
+func ChangeOS(oss string) string {
+	if len(oss) == 0 {
+		return ""
+	}
+	arr := strings.Split(oss, ",")
+	m := make(map[string]int)
+	for _, v := range arr {
+		if len(v) == 0 || v == "DatacenterEdition" {
+			continue
+		}
+		m[v] = 1
+	}
+	r := ""
+	for k, _ := range m {
+		r = r + k + ","
+	}
+	return r
+}
+
 func ParseFilesItemsEX(st *STPatchInfo) error {
 	//入库，先如文件表再录KID表
 	tx, err := GSqlOpt.Begin()
@@ -1079,6 +1099,7 @@ func ParseFilesItemsEX(st *STPatchInfo) error {
 	defer tx.Rollback()
 
 	for _, fps := range st.FilePatchs {
+		fps.OSS = ChangeOS(fps.OSS)
 		sql := fmt.Sprintf(SQL_INSERT_PATCHFILES, st.XML360ID, fps.NAME, fps.OSS, fps.ARCHS, fps.VERS, fps.LANGS, fps.URLS, fps.SIZE, st.GUID)
 		_, err = tx.Exec(sql)
 		if err != nil {
@@ -1087,7 +1108,7 @@ func ParseFilesItemsEX(st *STPatchInfo) error {
 		}
 	}
 	//再入库KID表
-	sql := fmt.Sprintf(SQL_INSERT_PATCHINFO, st.XML360ID, st.MSRCNumber, st.XML360Desc, st.XML360Date, st.PatchType, st.XML360Level, RepalceDesc(st.Description), st.SupportUrl, time.Now().String()[:19])
+	sql := fmt.Sprintf(SQL_INSERT_PATCHINFO, st.XML360ID, st.MSRCNumber, st.XML360Desc, st.XML360Date, st.PatchType, st.XML360Level, RepalceDesc(st.Description), st.SupportUrl, time.Now().String()[:19], st.Classification)
 	_, err = tx.Exec(sql)
 	if err != nil {
 		GLogCollect.ToRunLog(fmt.Sprintln("补丁基本信息入库失败.", err, sql))
@@ -1140,15 +1161,19 @@ func Get360XMLPath() string {
 //主函数
 func Main_getinfo() error {
 	log.Println("Main_getinfo")
-	LoadNoUseKID()
-	xmlpath := Get360XMLPath()
-	if len(xmlpath) == 0 {
-		return fmt.Errorf("无法获取xml所在位置")
-	}
-	GLogCollect.ToRunLog(fmt.Sprintln("補丁xml位置...", xmlpath))
 	//循环下载
 	for {
 		GLogCollect.ToRunLog(fmt.Sprintln("开启新一轮的信息获取."))
+
+		LoadNoUseKID()
+		xmlpath := Get360XMLPath()
+		if len(xmlpath) == 0 {
+			GLogCollect.ToRunLog(fmt.Sprintln("无法获取xml所在位置"))
+			time.Sleep(time.Second * 60)
+			continue
+		}
+		GLogCollect.ToRunLog(fmt.Sprintln("補丁xml位置:", xmlpath))
+
 		if err := DoGetInfoWorking(filepath.Join(xmlpath, "leakrepair.dat")); err != nil {
 			GLogCollect.ToRunLog(fmt.Sprintln("本轮获取补丁信息失败.", err))
 		}

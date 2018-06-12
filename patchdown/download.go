@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -134,6 +135,21 @@ type STIndex struct {
 }
 
 func ShowInfo(c *gin.Context) {
+	installFile, err := ioutil.ReadFile(filepath.Join(GExePath, "install.ok"))
+	if err != nil {
+		log.Println(err)
+		c.String(http.StatusOK, "")
+	}
+	//没有安装过,返回安装模板
+	if len(installFile) == 0 {
+		c.HTML(http.StatusOK, "install.tpl", gin.H{
+			"title": "11",
+		})
+	} else {
+		//否则进行运行状态展示
+		c.String(http.StatusOK, "补丁服务器已经安装过：", string(installFile))
+	}
+
 	atomic.AddInt32(&GNowTotalQuery, 1)
 
 	st := &STIndex{Version: GVersion, StartTime: GStartTime}
@@ -193,7 +209,7 @@ func QueryPatchxml(c *gin.Context) {
 }
 
 var (
-	GVersion   = "0.18"
+	GVersion   = "0.19"
 	GStartTime = ""
 )
 
@@ -202,7 +218,7 @@ func HandleNoRouter(c *gin.Context) {
 	c.String(http.StatusNotFound, "非法访问")
 }
 
-//开启下载服务
+//开启下载服务9
 func StartHttpServer(port string) error {
 	if len(port) == 0 {
 		port = "2368"
@@ -214,6 +230,7 @@ func StartHttpServer(port string) error {
 	eg.NoRoute(HandleNoRouter)
 	eg.StaticFile("/favicon.png", filepath.Join(GExePath, "/template/favicon.png"))
 	eg.GET("/logdown", LogDown)
+	eg.GET("/patchxml", QueryPatchxml)
 	eg.GET("/queryinfo", QueryInfo)
 	eg.GET("/xml/*action", QueryPatchxml)
 	eg.GET("/patch/:name", PatchDown)

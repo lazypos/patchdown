@@ -28,6 +28,9 @@ func (this *STSQLOperation) LoadDBConfig() (ip, dbname, user, pass string) {
 }
 
 func (this *STSQLOperation) Start() error {
+	GLogCollect.ToRunLog(fmt.Sprintln(`初始化数据库连接...`))
+	defer GLogCollect.ToRunLog(fmt.Sprintln(`初始化数据库连接完毕...`))
+
 	this.Close()
 	var err error
 	//connStr := "server=172.16.3.80;user id=sa;password=123;database=ywtest;encrypt=disable"
